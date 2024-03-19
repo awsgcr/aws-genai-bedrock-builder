@@ -1,0 +1,64 @@
+{
+    "promptConfigurations": [
+      {
+        "promptType": "PRE_PROCESSING",
+        "promptCreationMode": "OVERRIDDEN",
+        "promptState": "DISABLED",
+        "basePromptTemplate": "PRE_PROCESSING is disabled",
+        "inferenceConfiguration":
+        {
+          "temperature": 0,
+          "topP": 1,
+          "topK": 250,
+          "maximumLength": 100,
+          "stopSequences": ["</answer>","</error>"]
+        },
+        "parserMode": "DEFAULT"
+      },
+      {
+        "promptType": "ORCHESTRATION",
+        "promptCreationMode": "OVERRIDDEN",
+        "promptState": "ENABLED",
+        "basePromptTemplate": "\n\n\n\nHuman:\nYou are a research assistant AI that has been equipped with one or more functions to help you answer a <question>. Your goal is to answer the user's question to the best of your ability.\nYou were created with these instructions to consider as well:\n<auxiliary_instructions>$instruction$</auxiliary_instructions>\n$prompt_session_attributes$\nAlways return your final answer within <answer></answer> tags.\n$conversation_history$\nThe user input is <question>$question$</question>\nAssistant:",
+        "inferenceConfiguration":
+        {
+          "temperature": 0,
+          "topP": 1,
+          "topK": 250,
+          "maximumLength": 100,
+          "stopSequences": ["</answer>","</error>"]
+        },
+        "parserMode": "DEFAULT"
+      },
+      {
+        "promptType": "KNOWLEDGE_BASE_RESPONSE_GENERATION",
+        "promptCreationMode": "OVERRIDDEN",
+        "promptState": "DISABLED",
+        "basePromptTemplate": "EMPTY",
+        "inferenceConfiguration":
+        {
+          "temperature": 0,
+          "topP": 1,
+          "topK": 250,
+          "maximumLength": 100,
+          "stopSequences": ["⏎⏎Human:"]
+        },
+        "parserMode": "DEFAULT"
+      },
+      {
+        "promptType": "POST_PROCESSING",
+        "promptCreationMode": "OVERRIDDEN",
+        "promptState": "DISABLED",
+        "basePromptTemplate": "string- POST_PROCESSING",
+        "inferenceConfiguration":
+        {
+          "temperature": 0,
+          "topP": 1,
+          "topK": 250,
+          "maximumLength": 100,
+          "stopSequences": ["⏎⏎Human:"]
+        },
+        "parserMode": "DEFAULT"
+      }
+    ]
+  }
